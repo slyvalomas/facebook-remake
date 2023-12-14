@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav{
+    position: sticky;
+    top: 0;
+    border: 1px solid black;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.footer__logo{
+    border: 1px solid black;
+    padding: 1rem;
+}
+.footer__sittings{
+    border: 1px solid black;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.25rem;
+}
+.plus{
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+.message{
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+.notifications{
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+.profile{
+    border: 1px solid black;
+    padding: 0.5rem;
+}
+.mainContent{
+    padding: 25vh 5rem;
+    border: 1px solid black;
+}
+.creatStory{
+    padding: 2rem ;
+    border: 1px solid black;
+}
+.addPost{
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+    border: 1px solid black;
+}
+.post{
+    margin: 0 0.5rem;
+    border: 1px solid black
+}
+.postOne{
+    margin: 1rem 0;
+    border: 1px solid black;
+}
+.post__footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid black;
+}
+.Post__profile{
+    padding: 0.5rem;
+    border: 1px solid black;
+}
+.profileNameGroupe{
+    padding:0.25rem 0.5rem ;
+    border: 1px solid black;
+}
+.profileName{
+    gap: 0.25rem; 
+    display: flex;
+    justify-content: space-between;
+    padding:0.25rem 0.5rem ;
+    border: 1px solid black;
+}
+.name{
+    padding:0.25rem 0.5rem ;
+    border: 1px solid black;
+}
+.time{
+    padding:0.25rem 0.5rem ;
+    border: 1px solid black;
+}
+.GoupeOrPersonal{
+    padding:0.25rem 0.5rem ;
+    border: 1px solid black;
+}
+.postSittings{
+    gap: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding:  0.5rem;
+    border: 1px solid black;
+}
+.dots{
+    padding: 0.25rem;
+    border: 1px solid black;
+}
+.remove{
+    border: 1px solid black;
+    padding: 0.25rem;
+}
+.postContent{
+    border: 1px solid black;
+}
+.textContent{
+    padding: 15vh 0;
+    border: 1px solid black;
+}
+.imageContent{
+    padding: 15vh 0;
+    border: 1px solid black;
+}
+.reactionCount{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.likesCount{
+    padding: 1rem;
+    border: 1px solid black;
+}
+.commentsCount{
+    padding: 1rem;
+    border: 1px solid black;
+}
+.reactionDo{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    border: 1px solid black;
+}
+.likePart{
+    padding: 1rem;
+    border: 1px solid black;
+}
+.textLikePart{
+    border: 1px solid black;
+}
+.likes{
+    gap: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid black;
+}
+.comment{
+    gap: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid black;
+}
+.share{
+    gap: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
