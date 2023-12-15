@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav{
+    z-index: 2;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    border: 1px solid black;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.footer__logo{
+    margin-left: 0.75rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.search{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.133);
+    padding: 0.65rem;
+    border-radius: 50%;
+
+}
+.footer__sittings{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.25rem;
+}
+.plus,.click{
+    cursor: pointer;
+    user-select: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.133);
+    font-weight: bolder;
+}
+.plus:hover,.message:hover,.notifications:hover,.profile:hover{
+    background-color:rgba(0, 0, 0, 0.177) ;
+}
+.moves{
+    transform: scale(95%);
+}
+.message{
+    padding: 0.5rem;
+}
+.notifications{
+    padding: 0.5rem;
+}
+.profile{
+    padding: 0.5rem;
+}
+.mainContent{
+    padding: 1rem 3rem;
+}
+
+.creatStory{
+    padding: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+}
+.creatStory:hover{
+    background-color: rgba(0, 0, 0, 0.059);
+    cursor: pointer;
+}
+.storyContainer{
+    user-select: none;
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+.creatStoryClick{
+    color: #0866FF;
+    background:#0867ff22 ;
+}
+.createStorydiv{
+    margin-left: 1rem;
+}
+.createStoryP1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+
+}
+
+.createStoryP2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.648);
+}
+.addPost{
+    border: 1px solid black;
+    margin:1rem 3rem;
+    
+    border-radius: 10px;
+    
+}
+.add__FirstPart{
+    display: flex;
+    margin: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.232);
+    
+}
+.whatsOn:hover{
+    background-color: rgba(0, 0, 0, 0.101);
+}
+.whatsOn{
+    user-select: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.767);
+    font-family:sans-serif;
+    background-color: rgba(0, 0, 0, 0.049);
+    border-radius: 30px;
+    margin-left: 1rem;
+    padding: 1rem;
+    width: 90%;
+}
+.add__SecondPart{
+    font-family:  sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0.5rem;
+    padding: 0.25rem;
+}
+.live,.picture,.feeling{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 0.75rem 2.25rem;
+    margin: 0.25rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.live:hover,.picture:hover,.feeling:hover{
+    background-color: rgba(0, 0, 0, 0.081);
+    
+}
+.picture{
+    color:rgb(0, 89, 0) ;
+}
+
+.post{
+    margin: 0 3rem;
+    border: 1px solid black
+}
+
+.postprofile{
+    height: 30px;
+    width: 30px;
+}
+.post__footer{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid black;
+    position: relative;
+}
+.groupPic{
+    border-radius: 15px;
+}
+.Post__profile{
+    position: absolute;
+    top: 42px;
+    left:48px;
+    border: 1px solid black;
+}
+.profileNameGroupe{
+    font-weight: 550;
+    color: #000000;
+    display: flex;
+    padding:0.25rem 0.5rem ;
+    border: 1px solid black;
+}
+.profileName{
+    font-size: 0.8rem;
+    position: absolute ;
+    bottom: 26px;
+    left: 85px;
+    gap: 0.25rem; 
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.name:hover,.time:hover,.commentsCount:hover,.groupeName:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.name{
+    border: 1px solid black;
+}
+.time{
+    
+    border: 1px solid black;
+}
+.GoupeOrPersonal{
+    cursor: pointer;
+    border: 1px solid black;
+}
+.postSittings{
+    gap: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding:  0.5rem;
+    border: 1px solid black;
+}
+.remove:hover,.dots:hover{
+    background-color: #0000001c;
+    cursor: pointer;
+}
+.dots{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.remove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color:#0000003d;
+    font-size: 24px;
+    
+    padding: 0.5rem;
+}
+.postContent{
+    border: 1px solid black;
+}
+.textContent{
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    font-weight:550;
+    text-align: end;
+    border: 1px solid black;
+}
+.imageContent{
+    border: 1px solid black;
+}
+.reactionCount{
+    display: flex;
+    
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.likesCount,.commentsCount{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+.reactionDo{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.355);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.419);
+    margin:  0.5rem 1.5rem;
+}
+
+.likes,.share,.comment{
+    gap: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 5.2rem ;
+    margin: 0.25rem 0;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+.likes:hover,.share:hover,.comment:hover{
+    background-color: #00000018;
+}
+.commentSection{
+    border :1px solid black;
+    position: relative;
+    padding-top: 0;
+    padding-bottom: 3rem;
+
+}
+.viewMore{
+    border :1px solid black;
+    font-family: sans-serif;
+    color: #656565;
+    cursor: pointer;
+    width: fit-content;
+}
+.viewMore:hover{
+    text-decoration: underline;
+}
+.realComment{
+    border :1px solid black;
+    
+    margin-left: 4.25rem;
+    margin-right: 5rem;
+    margin-top: 2rem;
+    border-radius: 20px;
+}
+.commentProfile{
+    position: absolute;
+    margin: 0 0.5rem;
+
+}
+.commentname{
+    font-size: 1.1rem;
+    font-family: sans-serif;
+    font-weight: 550;
+}
+.commentText{
+    font-family: sans-serif;
+    font-weight: 550;
+    padding: 0.5rem;
+    padding-top: 0;
+    font-size: 1rem;
+    
+    
+    width: fit-content;
+    text-align: end;
+}
+.imgComment{
+    border-radius: 20px;
+}
+.commentTextSection{
+    background-color: rgb(237, 237, 237);
+    border-radius: 20px;
+}
+.likesDateReplay{
+    display: flex;
+    gap: 1rem;
+    padding: 0.1rem 1rem;
+}
+
+.commentDate:hover,
+.commentLike:hover,
+.commentReplay:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.writeComment{
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 1rem;
+    padding: 0.5rem;
+    
+    width: 100%;
+}
+.commentInputwrite{
+    padding: 1rem;
+    border-radius: 29px;
+    background-color: rgb(237, 237, 237);
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+}
+.commentInput{
+    width: 100%;
+}
+.iconsForComments{
+    display: flex;
+    position: absolute;
+    top: 12px;
+    right: -20px;
+}
+.HappyIcon{
+    position: relative;
+    right: 49px;
+}
+
+.HappyIcon,.avatarIcon{
+    
+    padding: 0.55rem;
+    margin: 0  0.2rem;
+}
+.avatarIcon{
+    position: relative;
+    right: 5px;
+}
+.HappyIcon:hover,.avatarIcon:hover{
+    cursor: pointer;
+    background-color: #65656531;
+    border-radius: 50%;
+}
+.inxo{
+    margin-top: 0.2rem;
+}
+@media screen and (min-width:810px){
+    .mainContent{
+        display: flex;
+        justify-content: center;
+    }
+    .centeredPosision{
+        width: 950px;
+    }
+}
