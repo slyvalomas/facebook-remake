@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .userpic{
+            padding: 0.5rem;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            background-color: gray;
+        }
+        .personal{
+            display: flex;
+            padding: 0.5rem;
+        }
+        .posts{
+            margin: 2rem;
+            border: 1px solid black;
+            padding: 1rem 0;
+        }
+        .picContent{
+            border: 1px solid black;
+            width: 100%;
+        }
+        .textContent{
+            padding: 0.5rem;
+        }
+        .post{
+            margin: 3rem 0;
+            border-radius: 20px;
+            border: 1px solid black;
+            padding: 0rem 0rem 2rem 0rem;
+        }
+    </style>
+    <div class="posts">
+        <div class="post">
+            <div class="personal">
+                <div class="userpic"></div>
+                <div class="name">{username}</div>
+            </div>
+            <div class="textContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio mollitia qui, itaque quis cumque tempore voluptatum dignissimos voluptates doloribus voluptas, ea accusamus. Sed odio error impedit delectus sapiente vero iusto.</div>
+            <div class="picContent">
+                <img src="pics/avatar.png" alt="">
+            </div>
+            <img src="profiles/0/imgContent/imageContent.jpg" alt="">
+            <img src="profiles/1/imgContent/imageContent.jpg" alt="">
+            <img src="profiles/2/imgContent/imageContent.jpg" alt="">
+            <img src="profiles/3/imgContent/imageContent.jpg" alt="">
+            <img src="profiles/0/profile picture/profilePictures.jpg" alt="">
+            <img src="profiles/1/profile picture/profilePictures.jpg" alt="">
+            <img src="profiles/2/profile picture/profilePictures.jpg" alt="">
+            <img src="profiles/3/profile picture/profilePictures.jpg" alt="">
+            
+        </div>
+    </div>
+</body>
+<script>
+        
+    //jyjyj posts post personal userpic name textContent picContent
+    const dataBase = [
+  
+        {profilePic: "pics/avatar.png",
+        username: "brahim abdelmoumen",
+            post1: {
+                picture: "pics/sticker.png",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio mollitia qui, itaque quis cumque tempore voluptatum dignissimos voluptates doloribus voluptas, ea accusamus. Sed odio error impedit delectus sapiente vero iusto."
+            }
+        },
+
+  
+        {profilePic: "pics/avatar.png",
+        username: " moumen",
+            post1: {
+                picture: "pics/sticker.png",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio mollitia qui, itaque quis cumque tempore voluptatum dignissimos voluptates doloribus voluptas, ea accusamus. Sed odio error impedit delectus sapiente vero iusto."
+            }
+        },
+
+  
+        {profilePic: "pics/avatar.png",
+        username: "abdelmoumen",
+            post1: {
+                picture: "pics/sticker.png",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio mollitia qui, itaque quis cumque tempore voluptatum dignissimos voluptates doloribus voluptas, ea accusamus. Sed odio error impedit delectus sapiente vero iusto."
+            }
+        },
+
+
+        {profilePic: "pics/avatar.png",
+        username: "brahim ",
+            post1: {
+                picture: "pics/sticker.png",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio mollitia qui, itaque quis cumque tempore voluptatum dignissimos voluptates doloribus voluptas, ea accusamus. Sed odio error impedit delectus sapiente vero iusto."
+            }
+        },
+
+    ];
+    function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+const x = [1, 2, 3, 4];
+const shuffledArray = shuffleArray([...x]);
+
+for (let i = 0; i < shuffledArray.length; i++) {
+  console.log(shuffledArray[i]);
+}
+
+const posts=document.querySelector(".posts")
+for (let i = 0; i < shuffledArray.length; i++) {
+    for (let i=0 ; i<dataBase.length;i++){
+        posts.innerHTML+=`   <div class="post">
+            <div class="personal">
+                <div class="userpic">
+                    <img src="${dataBase[i].profilePic}"  height="30px"  alt=""></div>
+                <div class="name">${dataBase[i].username}</div>
+            </div>
+            <div class="textContent">${dataBase[i].post1.text}</div>
+            <div class="picContent">
+                <img src="${dataBase[i].post1.picture}" alt="">
+            </div>
+            
+        </div>`
+        console.log(i)
+        }
+        
+}
+
+</script>
+</html>
