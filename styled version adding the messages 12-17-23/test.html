@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            position: relative;
+        }
+        .footer{
+            display: flex;
+            justify-content: end;
+            position: sticky;
+            top: 0;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+            background-color: antiquewhite;
+            margin: 0;
+        }
+        .userpic{
+            padding: 0.5rem;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            background-color: gray;
+        }
+        .personal{
+            display: flex;
+            padding: 0.5rem;
+        }
+        .posts{
+            margin: 2rem;
+            border: 1px solid black;
+            padding: 1rem 0;
+        }
+        .picContent{
+            border: 1px solid black;
+            width: 100%;
+        }
+        .textContent{
+            padding: 0.5rem;
+        }
+        .post{
+            margin: 3rem 0;
+            border-radius: 20px;
+            border: 1px solid black;
+            padding: 0rem 0rem 2rem 0rem;
+        }
+        .click{
+            cursor: pointer;
+            margin: 1rem;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.29);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            border-radius: 50%;
+            user-select: none;
+        }
+        .move{
+            transform: scale(95%);
+        }
+        
+        .clickNav{
+            
+            position: fixed;
+            top:80px;
+            right: 0;
+            background:radial-gradient(rgba(0, 0, 0, 0.13),rgba(255, 255, 255, 0));
+            display: none;
+            width:400px;
+            padding: 1rem;
+            padding-top:0 ;
+            
+            
+        }
+        .messageContainer{
+            background-color: white;
+            border-radius: 20px;
+        }
+        .navChats{
+            display: flex;
+            justify-content: space-between;
+            
+            padding: 1rem 0.5rem;
+        }
+        .messageNavSitings{
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+        .chats{
+            font-size: 1.5rem;
+            font-weight: 900;
+            font-family: 'roboto';
+            margin-top: 0.25rem;
+            
+        }
+        .dots{
+            border: 1px solid black;
+            padding: 1rem;
+        }
+        .expand{
+            border: 1px solid black;
+            padding: 1rem;
+        }
+        .writeNav{
+            border: 1px solid black;
+            padding: 1rem;
+        }
+        .searchMessage{
+            
+            padding: 0.5rem;
+            position: relative;
+        }
+        .searchIcon{
+            position: absolute;
+            
+            padding: 0.5rem;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        .imgSearchIcon{
+            width: 20px;
+            height: 20px;
+        }
+        .messageInput{
+            background-color: rgba(0, 0, 0, 0.112);
+            width: 80%;
+            border-radius: 25px;
+            border: 1px solid black;
+            padding: 0.72rem;
+            padding-left: 3.25rem;
+            font-size: 1.2rem;
+        }
+        .convertationContainer{
+            padding: 0.5rem;
+        }
+        .messageOne:hover{
+            background-color: rgba(0, 0, 0, 0.059);
+        }
+        .messageOne{
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            padding: 0.5rem;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            
+        }
+        .profileMessage{
+            width: 20px;
+            background-color: cadetblue;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid black;
+            padding: 1rem;
+        }
+        .name{
+            border: 1px solid black;
+            margin-left: 0.5rem;
+        }
+        .lastText{
+            display: flex;
+            gap: 1rem;
+            border: 1px solid black;
+            position: absolute;
+            top: 34px;
+            left: 54px;
+            margin-left: 0.5rem;
+        }
+        .showTheMessage{
+            display: none;
+        }
+        .messageSent{
+            position: relative;
+            display: block;
+            background-color: white;
+            border:1px solid black ;
+            width: 300px;
+            position: fixed;
+            bottom: 5px;
+            right: 10px;
+            border-radius: 8px;
+        }
+        .close:hover{
+            background-color: rgba(95, 158, 160, 0.282);
+        }
+        /* .close{
+            margin: 0.5rem;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            padding: 1rem;
+            border-radius: 50%;
+            color: rgba(0, 0, 0, 0.237);
+            cursor: pointer;
+            font-size: 1.5rem;
+        } */
+        /*
+        <div class="messageSent">
+        <div class="messageSentNav">
+            <div class="firstNav">
+                <div class="profileMessage"></div>
+                <div class="name">kosay</div>
+                <div class="arrowDown"></div>
+            </div>
+            <div class="messageSentNavSittings">
+                <div class="callVoice">X</div>
+                <div class="callVedio">X</div>
+                <div class="minimise">-</div>
+                <div class="close">X</div>
+            </div>*/
+        .messageSentNav{
+            display: flex;
+            border: 1px solid black ;
+            justify-content: space-between;
+            padding:0.1rem 0.1rem ;
+        }
+        .firstNav{
+            border-radius: 5px;
+            display: flex;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+            padding-left:0.21rem ;
+        }
+        .firstNav:hover{
+            background-color: rgba(0, 0, 0, 0.186);
+        }
+        .messageSentNavSittings{
+            display: flex;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.536);
+            
+        }
+        .callVoice,.callVedio,.minimise,.close{
+            font-size: 1.25rem;
+            padding: 0.25rem;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            
+        }
+        .callVoice:hover,.callVedio:hover,.minimise:hover,.close:hover{
+            background-color: rgba(0, 0, 0, 0.107);
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .profileMessage.insideTheContainer{
+            height: 10px;
+            width: 10px;
+            padding: 0.75rem;
+        }
+        .centerName{
+            font-size: 0.8rem;
+            margin-left: 0.2rem;
+            font-family: 'roboto';
+            display: flex;
+            align-items: center;
+            place-content: center;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        .arrowDown{
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transform: rotate(90deg);
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        .messageMainContent{
+            
+            overflow-y: scroll;
+            overflow-x: hidden;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: end;
+            height: 360px;
+            border: 1px solid black;
+
+        }
+        .sentSomething{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0rem 0.5rem;
+        }
+        .sentFile{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .messageSentedNow{
+            margin: 1rem 0.5rem;
+            padding: 1rem;
+            background-color: rgb(43, 134, 226);
+            border-radius:25px ;
+            width:195px;
+        }
+        .insideTheMainContentMessage{
+            
+            margin: 1rem;
+            height: 75px;
+            width: 75px;
+            
+        }
+        .aboveTheMessage{
+
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-flow: column nowrap;
+        }
+        .INSIDETHEMESSAGE{
+            font-family: 'roboto';
+        }
+        .sentText{
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .moreActions,.morePictures,.moreStickers,.moreGifs{
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: rgb(255, 255, 255);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0.1rem;
+            background-color: rgba(0, 0, 0, 0.433);
+        }
+        .sentTextInput{
+            
+            width: 90px;
+            padding: 0.75rem;
+            margin: 0.25rem;
+            border-radius: 25px;
+            padding-right: 1.5rem;
+        }
+        .sentTextImo{
+            position: absolute;
+            right: 10px;
+        }
+        /*     <div class="sentSomething">
+            <div class="sentFile">
+                <div class="moreActions">+</div>
+                <div class="morePictures">
+                    <img height="20px" src="pics/pic-vedio.png" alt="">
+                </div>
+                <div class="moreStickers"><img height="15px" src="pics/sticker.png" alt=""></div>
+                <div class="moreGifs">
+                    <img height="20px" src="pics/gif.png" alt="">
+                </div>
+            </div>
+            <div class="sentText">
+                <input class="sentTextInput" type="text">
+                <img class="sentTextImo" src="pics/feelings.png" height="20px" alt="">
+            </div>
+            <div class="sentTextLike">
+                <img height="18px" src="pics/like.png" alt="">
+            </div>*/
+    </style>
+    <div class="footer">
+        <div class="click">+</div>
+    </div>
+    
+    <div class="posts">
+        <div class="post">
+            <div class="personal">
+                <div class="userpic"></div>
+                <div class="name">{username}</div>
+            </div>
+            <div class="textContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio mollitia qui, itaque quis cumque tempore voluptatum dignissimos voluptates doloribus voluptas, ea accusamus. Sed odio error impedit delectus sapiente vero iusto.</div>
+            
+            
+        </div>
+    </div>
+    <div class="clickNav">
+        <div class="messageContainer">
+            <div class="navChats">
+                <div class="chats">chats</div>
+                <div class="messageNavSitings">
+                    <div class="dots"></div>
+                    <div class="expand"></div>
+                    <div class="writeNav"></div>
+                </div>
+            </div>
+            <div class="searchMessage">
+                <div class="searchIcon">
+                    <img class="imgSearchIcon" src="z-picstest/search-icon-png-21.png" alt="">
+                </div>
+                <input class="messageInput" type="text">
+            </div>
+            <div class="convertationContainer">
+                <div class="messageOne">
+                    <div class="profileMessage"></div>
+                    <div class="name">kosay</div>
+                    <div class="lastText">hi there im using facebook
+                        <div class="time">6w</div>
+                    </div>
+                    
+                </div>
+                <div class="messageOne">
+                    <div class="profileMessage"></div>
+                    <div class="name">gabrialy</div>
+                    <div class="lastText">hi there im using facebook
+                        <div class="time">6w</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="messageSent">
+        <div class="messageSentNav">
+            <div class="firstNav">
+                <div class="profileMessage insideTheContainer"></div>
+                <div class="name  centerName">kosay</div>
+                <div class="arrowDown">></div>
+            </div>
+            <div class="messageSentNavSittings">
+                <div class="callVoice"><img src="z-picstest/call.png" alt=""  height="18px"></div>
+                <div class="callVedio"><img src="z-picstest/vedio call.png" alt="" height="20px"></div>
+                <div class="minimise"><img src="z-picstest/minimize.png" alt=""  height="20px"></div>
+                <div class="close"><img src="z-picstest/close.png" alt=""  height="20px"></div>
+            </div>
+        </div>
+        <div class="messageMainContent">
+            <div class="aboveTheMessage">
+                <div class="profileMessage insideTheMainContentMessage"></div>
+                <div class="name INSIDETHEMESSAGE">kosay</div>
+            </div>
+            
+            <div class="messageSentedNow">
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis optio quod iure nemo modi voluptatibus, sequi minus nam omnis quos. Officiis soluta possimus veritatis inventore molestiae neque quibusdam quis optio.
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim voluptatem a dolorem molestiae earum maxime doloribus fugit dolore laboriosam suscipit quis minima laborum, magnam vel consequuntur unde, eveniet cumque et.
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique error quo esse nesciunt perspiciatis illum deleniti facilis sequi cum magni distinctio eum ducimus sed repudiandae, autem ab nostrum laborum hic.
+            </div>
+            <div class="messageSentedNow">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum voluptatum deserunt minus deleniti dolores porro asperiores dolor voluptates corrupti unde, tempora a atque modi excepturi rem fugit vitae! Sunt, voluptatem?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate saepe veritatis incidunt. Deleniti eligendi modi reprehenderit quidem, doloribus amet in ratione alias quasi quas asperiores, molestias repudiandae quo debitis quam.</div>
+            <div class="messageSentedNow">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam suscipit illo repudiandae quisquam reprehenderit quasi, eaque, maiores nesciunt rerum perspiciatis tenetur eos sit tempore nostrum blanditiis consectetur. Placeat, voluptatibus deserunt.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolor architecto perferendis. Sed eos qui rem pariatur eligendi, labore doloremque possimus aliquid iste alias placeat suscipit esse animi, tenetur earum.
+            </div>
+        </div>
+        <div class="sentSomething">
+            <div class="sentFile">
+                <div class="moreActions">+</div>
+                <div class="morePictures">
+                    <img height="20px" src="pics/pic-vedio.png" alt="">
+                </div>
+                <div class="moreStickers"><img height="15px" src="pics/sticker.png" alt=""></div>
+                <div class="moreGifs">
+                    <img height="20px" src="pics/gif.png" alt="">
+                </div>
+            </div>
+            <div class="sentText">
+                <input class="sentTextInput" type="text" placeholder="Aa">
+                <img class="sentTextImo" src="pics/feelings.png" height="20px" alt="">
+            </div>
+            <div class="sentTextLike">
+                <img height="18px" src="pics/like.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+        
+    //jyjyj posts post personal userpic name textContent picContent
+    const dataBase = [
+  
+        {profilePic: "pics/avatar.png",
+        username: "brahim abdelmoumen",
+            post1: {
+                picture: "pics/sticker.png",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio mollitia qui, itaque quis cumque tempore voluptatum dignissimos voluptates doloribus voluptas, ea accusamus. Sed odio error impedit delectus sapiente vero iusto."
+            }
+        },
+
+  
+        {profilePic: "pics/avatar.png",
+        username: " moumen",
+            post1: {
+                picture: "pics/sticker.png",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio mollitia qui, itaque quis cumque tempore voluptatum dignissimos voluptates doloribus voluptas, ea accusamus. Sed odio error impedit delectus sapiente vero iusto."
+            }
+        },
+
+  
+        {profilePic: "pics/avatar.png",
+        username: "abdelmoumen",
+            post1: {
+                picture: "pics/sticker.png",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio mollitia qui, itaque quis cumque tempore voluptatum dignissimos voluptates doloribus voluptas, ea accusamus. Sed odio error impedit delectus sapiente vero iusto."
+            }
+        },
+
+
+        {profilePic: "pics/avatar.png",
+        username: "brahim ",
+            post1: {
+                picture: "pics/sticker.png",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio mollitia qui, itaque quis cumque tempore voluptatum dignissimos voluptates doloribus voluptas, ea accusamus. Sed odio error impedit delectus sapiente vero iusto."
+            }
+        },
+
+    ];
+    function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+const x = [1, 2, 3, 4];
+const shuffledArray = shuffleArray([...x]);
+
+for (let i = 0; i < shuffledArray.length; i++) {
+  console.log(shuffledArray[i]);
+}
+
+const posts=document.querySelector(".posts")
+for (let i = 0; i < shuffledArray.length; i++) {}
+    for (let i=0 ; i<1;i++){
+        posts.innerHTML+=`   <div class="post">
+            <div class="personal">
+                <div class="userpic">
+                    <img src="${dataBase[i].profilePic}"  height="30px"  alt=""></div>
+                <div class="name">${dataBase[i].username}</div>
+            </div>
+            <div class="textContent">${dataBase[i].post1.text}</div>
+            <div class="picContent">
+                <img src="${dataBase[i].post1.picture}" alt="">
+            </div>
+            
+        </div>`
+        console.log(i)
+        }
+        const clickNav=document.querySelector(".clickNav")
+        const click=document.querySelector(".click")
+click.addEventListener("click",function(){
+    click.classList.add('move')
+    if (clickNav.style.display === "none") {
+        clickNav.style.display = "block"
+    } else {
+        clickNav.style.display = "none"
+    }
+    setTimeout(function(){
+     click.classList.remove('move')
+     if(clickNav.style.display === "block"){
+            click.style.backgroundColor="blue"
+        }else{
+            click.style.backgroundColor="cadetblue"
+        }
+        
+},100)
+});
+const messageOne=document.querySelector(".messageOne")
+const messageSent=document.querySelector(".messageSent")
+const close=document.querySelector(".close")
+close.addEventListener("click",function(){
+    messageSent.style.display="none"
+})
+messageOne.addEventListener("click",function(){
+    if (messageSent.style.display==="none"){
+        messageSent.style.display="block"
+        clickNav.style.display = "none"
+    }else{
+        messageSent.style.display="block"
+        clickNav.style.display = "none"
+    }
+    
+})
+const sentTextLike = document.querySelector(".sentTextLike");
+const messageMainContent = document.querySelector(".messageMainContent");
+const sentTextInput = document.querySelector(".sentTextInput");
+sentTextLike.addEventListener("click", function() {
+    const textValue = sentTextInput.value;
+    if (textValue!=""){
+    console.log(textValue);
+    messageMainContent.innerHTML += `
+        <div class="messageSentedNow">${textValue}</div>`;
+        sentTextInput.value=""
+    }
+});
+sentTextInput.addEventListener("input",function(){
+    const sentFile=document.querySelector(".sentFile")
+    const sentTextImo=document.querySelector(".sentTextImo")
+    if (sentTextInput.value!=""){
+    sentFile.style.display="none"
+    sentTextInput.style.width="220px"
+    sentTextLike.innerHTML=`
+    <img height="18px" src="z-picstest/sent.png" alt="">`
+}else{
+    sentFile.style.display="flex"
+    sentTextInput.style.width="90px"
+    sentFile.style.transition="none"
+}
+})
+/*     <div class="sentSomething">
+            <div class="sentFile">
+                <div class="moreActions">+</div>
+                <div class="morePictures">
+                    <img height="20px" src="pics/pic-vedio.png" alt="">
+                </div>
+                <div class="moreStickers"><img height="15px" src="pics/sticker.png" alt=""></div>
+                <div class="moreGifs">
+                    <img height="20px" src="pics/gif.png" alt="">
+                </div>
+            </div>
+            <div class="sentText">
+                <input class="sentTextInput" type="text">
+                <img class="sentTextImo" src="pics/feelings.png" height="20px" alt="">
+            </div>
+            <div class="sentTextLike">
+                <img height="18px" src="pics/like.png" alt="">
+            </div>*/
+</script>
+</html>
