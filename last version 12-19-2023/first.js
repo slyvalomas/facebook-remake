@@ -45,7 +45,6 @@ const post=document.querySelector(".post")
 for (let i = 0 ; i<dataBase.length; i++){
     post.innerHTML+=`
                 <div class="postOne">
-                    <!--groupe name and pic profile name and pic and the sittingS-------------------------------------------------------------------------------------->
                     <footer class="post__footer">
                         <div>
                             <div class="Post__profile">
@@ -61,9 +60,9 @@ for (let i = 0 ; i<dataBase.length; i++){
                                 <div class="time">${"10:15 16 Dec 2023"}</div>
                                 <div class="GoupeOrPersonal">0</div>
                             </div>
-                            <!--POST creator INFORMATION ------------------------------------------------------------------------------------->
+                           
                         </div>
-                        <!--post sittings-------------------------------------------------------------------------------------->
+                       
                         <div class="postSittings">
                             <div class="dots">
                                 <svg class="dotsSvg"  height="10px" width="30px">
@@ -75,19 +74,19 @@ for (let i = 0 ; i<dataBase.length; i++){
                             <div class="remove">X</div>
                         </div>
                     </footer>
-                    <!--post text and picture-------------------------------------------------------------------------------------->
+                    
                     <main class="postContent">
                         <div class="textContent">${dataBase[i].post1.textContent}</div>
                         <div class="imageContent">
                             <img width="100%" src="${dataBase[i].post1.imageContent}" alt="">
                         </div>
                     </main>
-                    <!--likes and comments counts-------------------------------------------------------------------------------------->
+                    
                     <div class="reactionCount">
                         <div class="likesCount"><img class="likesCountIcon" src="pics/love.png" height="20px" alt="">{edit this on js}</div>
                         <div class="commentsCount">{edit here on js}<img class="commentsCountIcon" src="pics/comment.png" height="20px" alt=""></div>
                     </div>
-                    <!--likes and comments click or buttons -------------------------------------------------------------------------------------->
+                    
                     <div class="reactionDo">
                         <div class="likes">
                             <div class="likePart"><img class="likePartIcon"  src="pics/like.png" alt="" width="20px"></div>
@@ -144,7 +143,6 @@ for (let i = 0 ; i<dataBase.length; i++){
                 </div>
                 `
 }
-//-------------------------------------------------------------------------------------------------------------
 const body=document.querySelector("body")
 body.innerHTML+=`
 <div class="clickNav">
@@ -414,7 +412,7 @@ setTimeout(function(){
     click.classList.remove('moves');
 },100)
 })
-//i did wanted to  dry but im still bad .message  .notifications .profile .creatStoryClick
+
 const message=document.querySelector(".message")
 message.addEventListener("click",function(){
     message.classList.add('moves')
